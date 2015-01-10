@@ -9,6 +9,9 @@ import java.util.Map;
  *
  * Returns the index of the first occurrence of needle in haystack,
  * or -1 if needle is not part of haystack.
+ *
+ *  this problem can be solved using known efficient algorithms such as
+ *  Rabin-Karp algorithm, KMP algorithm, and the Boyer- Moore algorithm.
  */
 public class ImplementStrStr {
     public int strStr(String haystack, String needle) {
