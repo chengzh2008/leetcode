@@ -25,10 +25,10 @@ public class FractionToRecurringDecimal {
             stringBuilder.append("-");
         }
         // prevent int overflow
-        long num = Math.abs(numerator);
-        long denom = Math.abs(denominator);
-        stringBuilder.append(num/denom);
-        long remainder = num%denom;
+        long num = Math.abs(((long)numerator));
+        long deNom = Math.abs((long)denominator);
+        stringBuilder.append(num/deNom);
+        long remainder = num%deNom;
         if (remainder != 0) {
             stringBuilder.append(".");
         }
@@ -36,8 +36,8 @@ public class FractionToRecurringDecimal {
         Map<Long, Integer> map = new HashMap<>();
         while(remainder != 0 && !map.containsKey(remainder) ) {
             map.put(remainder, stringBuilder.length());
-            stringBuilder.append(remainder*10/denom);
-            remainder = remainder* 10%denom;
+            stringBuilder.append(remainder*10/deNom);
+            remainder = remainder* 10%deNom;
         }
         // if start to repeat, insert "(" and append ")"
         if (map.containsKey(remainder)) {
@@ -48,7 +48,7 @@ public class FractionToRecurringDecimal {
     }
 
     public static void main(String[] args) {
-        System.out.println(new FractionToRecurringDecimal().fractionToDecimal(1, 3));
+        System.out.println(new FractionToRecurringDecimal().fractionToDecimal(-1, -2147483648));
         System.out.println(new FractionToRecurringDecimal().fractionToDecimal(1, 6));
         System.out.println(new FractionToRecurringDecimal().fractionToDecimal(22, 7));
         System.out.println(new FractionToRecurringDecimal().fractionToDecimal(2, 3));
