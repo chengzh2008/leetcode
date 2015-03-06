@@ -1,3 +1,5 @@
+package src.main.java;
+
 public class InsertionSortList {
 	public class ListNode {
 		int val;
@@ -9,39 +11,34 @@ public class InsertionSortList {
 		}
 	}
 
+	// pretty clever way to do it, use a dummy node as helper
 	public ListNode insertionSortList(ListNode head) {
-		if (head == null || head.next == null)
+		if( head == null ){
 			return head;
-		ListNode current = head;
-		ListNode next = current.next;
-		while (next != null) {
-			if (next.val >= current.val) {
-				current = current.next;
-			} else {
-				if (current == head) {
-					current.next = next.next;
-					next.next = current;
-					head = next;
-				} else {
-					ListNode find = head;
-					if (find.val > next.val) {
-						current.next = next.next;
-						next.next = find;
-						head = next;
-					} else {
-						while (find.next.val < next.val) {
-							find = find.next;
-						}
-					}
-					current.next = next.next;
-					next.next = find.next;
-					find.next = next;
-				}
-			}
-			next = current.next;
 		}
-		return head;
+
+		ListNode helper = new ListNode(0); //new starter of the sorted list
+		ListNode cur = head; //the node will be inserted
+		ListNode pre = helper; //insert node between pre and pre.next
+		ListNode next = null; //the next node will be inserted
+		//not the end of input list
+		while( cur != null ){
+			next = cur.next;
+			//find the right place to insert
+			while( pre.next != null && pre.next.val < cur.val ){
+				pre = pre.next;
+			}
+			//insert between pre and pre.next
+			cur.next = pre.next;
+			pre.next = cur;
+			pre = helper;
+			cur = next;
+		}
+
+		return helper.next;
 	}
+
+
 
 	public static void main(String[] args) { 
 	}

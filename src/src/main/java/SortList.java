@@ -1,4 +1,4 @@
-
+package src.main.java;
 
 /**
  * @author Zhihong Cheng
@@ -38,13 +38,13 @@ public class SortList {
 	private ListNode merge(ListNode head, ListNode halfHead) {
 		ListNode output = null;
 		if (head == null && halfHead == null) {
-			return output = null;
+			output = null;
 		}
 		if (head != null && halfHead == null) {
-			return output = head;
+			output = head;
 		}
 		if (head == null && halfHead != null) {
-			return output = halfHead;
+			output = halfHead;
 		}
 		if (head !=null && halfHead != null) {
 			if (head.val < halfHead.val) {
@@ -61,7 +61,6 @@ public class SortList {
 			}
 				
 		}
-		
 		return output;
 	}
 	
