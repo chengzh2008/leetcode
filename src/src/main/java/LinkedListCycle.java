@@ -18,17 +18,19 @@ public class LinkedListCycle {
     }
 
     public boolean hasCycle(ListNode head) {
-        // check the edge case
-        if (head == null || head.next == null || head.next.next == null) return false;
-        // slow and fast pointer, the idea behind this:
-        // if there is a cycle, the two points will point to the same node somewhere.
         ListNode slow = head;
         ListNode fast = head;
-        while(fast!= null && fast.next != null && fast.next.next !=null) {
-            fast = fast.next.next;
-            slow = slow.next;
-            if (fast == slow) return true;
+        while(slow!=null&& fast!=null) {
+            slow=slow.next;
+            fast=fast.next;
+            if(fast!=null) {
+                fast=fast.next;
+            }
+            if (fast == slow) { // deal with the edge case
+                break;
+            }
         }
+        if (fast!=null) return true;
         return false;
     }
 }
