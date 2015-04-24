@@ -22,4 +22,15 @@ public class BestTimeBuySellStock {
         }
         return profit[n - 1];
     }
+
+    public int maxProfitO1space(int[] prices) {
+        int max = 0;
+        int profit = 0;
+        for (int i = 1; i < prices.length; i++) {
+            profit += prices[i] - prices[i-1];
+            if (profit <=0) profit = 0;
+            if (profit > max) max = profit;
+        }
+        return max;
+    }
 }
