@@ -8,6 +8,7 @@ package src.main.java;
  engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
  */
 public class BestTimeBuySellStockII {
+    // dynamic programming...
     public int maxProfit(int[] prices) {
         int n = prices.length;
         if (prices == null || n <= 1) return 0;
