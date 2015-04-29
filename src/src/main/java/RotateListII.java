@@ -4,7 +4,7 @@ package src.main.java;
  * Created by xiaoyazi on 4/28/15.
  */
 public class RotateListII {
-    public ListNode rotateRight(SortKsortedList.ListNode head, int k) {
+    public ListNode rotateRight(ListNode head, int k) {
 
         ListNode current = head;
         if (head == null || head.next == null || k == 0) return head;
