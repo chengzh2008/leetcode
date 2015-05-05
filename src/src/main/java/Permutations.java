@@ -12,7 +12,7 @@ import java.util.List;
  *
  * Strategy: Recursive backtracking...
  *
- * Basically, for each item in the array, you add another item, which is not in the
+ * Basically, for each item in the array, you add item, which is not in the
  * list so far, to the growing list, until you get all the items.
  *
  */
