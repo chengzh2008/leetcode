@@ -9,7 +9,7 @@ package src.main.java;
  *
  * |start  |       |       |       |       |       |       |
  * |       |       |       |       |       |       |       |
- * |       |       |       |       |       |finish |       |
+ * |       |       |       |       |       |       |finish |
  *
  * Above is a 3 x 7 grid. How many possible unique paths are there?
  *
